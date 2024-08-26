@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/demo/flags/flags.css";
+@import "assets/demo/documentation.scss";
+
+@import "primeng/resources/themes/nova-accent/theme.css";
+@import "primeflex/themes/primeone-dark.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+
+html {
+    font-size: 1rem;
+    height: 100%
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--surface-ground);
+    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+

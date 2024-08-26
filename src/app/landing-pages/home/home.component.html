@@ -1,0 +1,431 @@
+<div class="ng-star-inserted">
+    <!-- <div class="surface-overlay shadow-2 flex align-items-center justify-content-between relative lg:static flex-wrap px-6 lg:px-0"> -->
+    <!-- <div class="surface-overlay shadow-2 flex align-items-center justify-content-between relative lg:static flex-wrap px-6 lg:px-0"> -->
+    <!-- <div class="bg-gray-900 py-2 px-6 shadow-2 flex align-items-center justify-content-between relative"> -->
+    <div class="bg-gray-900 shadow-2 flex align-items-center justify-content-between relative py-2 px-6 lg:px-0">
+        <!-- Logo -->
+        <img src="assets/images/fastfood-logo.svg" alt="Logo fastfood" height="50">
+    
+        <!-- Hamburger Icon for Mobile -->
+        <a (click)="toggleMenu()" class="p-element cursor-pointer block lg:hidden text-gray-400">
+            <i class="pi pi-bars text-4xl"></i>
+        </a>
+    
+        <!-- Navigation Menu -->
+        <!-- class="align-items-center flex-grow-1 justify-content-between lg:flex hidden lg:block z-2" -->
+        <!-- class="menu-container align-items-center flex-grow-1 justify-content-between lg:flex absolute lg:static surface-overlay left-0 top-100 px-6 lg:px-0 z-2 shadow-2 lg:shadow-none" -->
+        <!-- class="menu-container align-items-center flex-grow-1 justify-content-between lg:flex absolute lg:static w-full surface-overlay left-0 top-100 px-6 lg:px-0 z-2 shadow-2 lg:shadow-none" -->
+        <!-- class="menu-container align-items-center flex-grow-1 justify-content-between lg:flex absolute lg:static w-full h-full lg:h-auto surface-overlay left-0 top-0 z-50 shadow-2 lg:shadow-none transition-all duration-300 ease-in-out" -->
+        <!-- <div [ngClass]="{'hidden': !isMenuVisible, 'block': isMenuVisible, 'active': isMenuVisible && !isMenuVisible}" 
+        class="menu-container align-items-center flex-grow-1 justify-content-between lg:flex absolute lg:static surface-overlay left-0 top-100 px-6 lg:px-0 z-2 shadow-2 lg:shadow-none"> -->
+        <div class="menu-container align-items-center flex-grow-1 justify-content-between lg:flex absolute lg:static w-full bg-gray-900 left-0 top-100 px-6 lg:px-0 z-2 shadow-2 lg:shadow-none" [ngClass]="{'hidden': !isMenuOpen}">
+            <section></section>
+            <!-- <ul class="list-none p-0 m-0 flex lg:align-items-center text-900 select-none flex-column lg:flex-row cursor-pointer"> -->
+            <ul class="list-none p-0 m-0 flex lg:align-items-center text-gray-400 select-none flex-column lg:flex-row cursor-pointer">
+                <li>
+                    <a (click)="toggleDropdown()" class="p-element p-ripple flex px-0 lg:px-5 py-4 align-items-center hover:text-blue-600 font-medium transition-colors transition-duration-150">
+                        <span>Menu</span>
+                        <i class="pi pi-chevron-down ml-auto lg:ml-3"></i>
+                    </a>
+                    <div class="lg:absolute bg-gray-800 origin-top left-0 top-100 w-full" [ngClass]="{'hidden': !isDropdownOpen}">
+                        <div class="flex flex-wrap p-4"> <!-- Réduit le padding -->
+                            <div class="w-full lg:w-6 mb-4 lg:mb-0">
+                                <span class="block font-normal text-xl mb-4 text-white">Menu</span> <!-- Réduit la taille du texte -->
+                                <p class="line-height-3 m-0 text-gray-400">Découvrez notre large choix de produits, des burgers classiques aux boissons fraîches.</p>
+                            </div>
+                            <div class="w-full lg:w-6">
+                                <div class="flex flex-wrap border-bottom-1 border-gray-700 pb-2 mb-2"> <!-- Réduit le padding -->
+                                    <div class="px-0 lg:px-3 py-2">
+                                        <span class="text-white">McDonald's</span>
+                                        <p class="text-sm text-gray-400 mt-1 mb-0 line-height-3">Burgers, frites et plus encore pour satisfaire toutes vos envies.</p>
+                                    </div>
+                                    <div class="px-0 lg:px-3 py-2">
+                                        <span class="text-white">Boissons</span>
+                                        <p class="text-sm text-gray-400 mt-1 mb-0 line-height-3">Boissons variées pour tous les âges, des sodas aux smoothies.</p>
+                                    </div>
+                                    <div class="px-0 lg:px-3 py-2">
+                                        <span class="text-white">Glacier Italien</span>
+                                        <p class="text-sm text-gray-400 mt-1 mb-0 line-height-3">Crèmes glacées artisanales pour les enfants et les gourmands.</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap">
+                                    <div class="px-0 lg:px-3 py-2">
+                                        <span class="text-white">Service de Livraison</span>
+                                        <p class="text-sm text-gray-400 mt-1 mb-0 line-height-3">Profitez de notre service de livraison rapide pour déguster vos plats préférés chez vous.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="p-ripple p-element flex px-0 lg:px-5 py-4 hover:text-blue-600 font-medium transition-colors transition-duration-150">
+                        <span>À Propos</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="p-ripple p-element flex px-0 lg:px-5 py-4 hover:text-blue-600 font-medium transition-colors transition-duration-150">
+                        <span>Contact</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="p-ripple p-element flex px-0 lg:px-5 py-4 hover:text-blue-600 font-medium transition-colors transition-duration-150">
+                        <span>Réservations</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>      
+    
+    <div class="bg-gray-900 px-4 py-8 md:px-6 lg:px-8">
+        <div class="flex flex-wrap">
+            <div class="w-12 lg:w-6 p-4">
+                <h1 class="text-6xl font-bold text-white mt-0 mb-3">Bienvenue chez <span class="text-yellow-500 underline">FastFood Express</span></h1>
+                <p class="text-3xl text-gray-400 mt-0 mb-5">Découvrez notre large gamme de produits : des burgers savoureux, des boissons rafraîchissantes, des glaces artisanales pour les enfants, et un service de livraison rapide à domicile.</p>
+                <ul class="list-none p-0 m-0">
+                    <li class="mb-3 flex align-items-center">
+                        <i class="pi pi-star text-yellow-500 text-xl mr-2"></i>
+                        <span class="text-gray-400 line-height-3">Burgers McDonald's : Goûtez à nos burgers faits maison avec les meilleurs ingrédients.</span>
+                    </li>
+                    <li class="mb-3 flex align-items-center">
+                        <i class="pi pi-beer text-yellow-500 text-xl mr-2"></i>
+                        <span class="text-gray-400 line-height-3">Boissons pour jeunes : Des sodas, smoothies, et autres boissons pour toute la famille.</span>
+                    </li>
+                    <li class="mb-3 flex align-items-center">
+                        <i class="pi pi-ice-cream text-yellow-500 text-xl mr-2"></i>
+                        <span class="text-gray-400 line-height-3">Glacier Italien : Des glaces artisanales pour ravir les enfants et les gourmands.</span>
+                    </li>
+                    <li class="mb-3 flex align-items-center">
+                        <i class="pi pi-truck text-yellow-500 text-xl mr-2"></i>
+                        <span class="text-gray-400 line-height-3">Service de Livraison : Recevez vos plats préférés directement à domicile avec notre service de livraison rapide.</span>
+                    </li>
+                </ul>
+                <button type="button" pbutton="" pripple="" label="Commandez Maintenant"
+                    class="p-element p-ripple block mt-7 mb-7 lg:mb-0 p-button-rounded p-button-success p-button-lg font-medium p-button p-component">
+                    <span class="p-button-label">Commandez Maintenant</span>
+                    <span class="p-ink"></span>
+                </button>
+            </div>
+            <div class="w-12 lg:w-6 text-center lg:text-right overflow-hidden">
+                <img src="assets/images/blocks/hero/fastfood-illustration.svg" alt="Image" class="w-full lg:w-auto">
+            </div>
+        </div>
+    </div>
+    
+    <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+        <div class="flex justify-content-evenly flex-wrap">
+            <!-- Logo McDonald's -->
+            <div class="p-3">
+                <img src="assets/images/blocks/logos/mcdonalds.svg" alt="McDonald's Logo" height="50">
+            </div>
+            <!-- Logo Boissons Jeunes -->
+            <div class="p-3">
+                <img src="assets/images/blocks/logos/boissons-jeunes.svg" alt="Boissons Jeunes Logo" height="50">
+            </div>
+            <!-- Logo Glacier Italien -->
+            <div class="p-3">
+                <img src="assets/images/blocks/logos/glacier-italien.svg" alt="Glacier Italien Logo" height="50">
+            </div>
+            <!-- Logo Livraison à Domicile -->
+            <div class="p-3">
+                <img src="assets/images/blocks/logos/livraison-domicile.svg" alt="Service Livraison Logo" height="50">
+            </div>
+        </div>
+    </div>
+
+    <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+        <div class="font-bold text-900 text-3xl mb-3 text-center">Découvrez Nos Services</div>
+        <div class="text-700 text-center mb-3">Explorez nos offres variées pour tous les goûts et besoins. Nous avons quelque chose pour chaque membre de la famille.</div>
+        <div class="flex flex-wrap">
+            <!-- McDonald's -->
+            <div class="w-full lg:w-6 xl:w-3 p-5">
+                <img src="assets/images/blocks/feature/mcdonalds.svg" alt="McDonald's" class="w-full">
+                <div class="mt-3 mb-2 font-medium text-900 text-xl">McDonald's</div>
+                <span class="text-700 line-height-3">Savourez vos burgers préférés avec notre menu McDonald's classique, parfait pour tous les âges.</span>
+                <a tabindex="0" class="text-blue-500 font-medium flex align-items-center mt-2">
+                    <span>Explorer</span><i class="pi pi-arrow-right ml-3"></i>
+                </a>
+            </div>
+            <!-- Boissons pour jeunes -->
+            <div class="w-full lg:w-6 xl:w-3 p-5">
+                <img src="assets/images/blocks/feature/boissons-jeunes.svg" alt="Boissons pour jeunes" class="w-full">
+                <div class="mt-3 mb-2 font-medium text-900 text-xl">Boissons pour Jeunes</div>
+                <span class="text-700 line-height-3">Des boissons rafraîchissantes et amusantes pour les jeunes, idéales pour toute occasion.</span>
+                <a tabindex="0" class="text-blue-500 font-medium flex align-items-center mt-2">
+                    <span>Explorer</span><i class="pi pi-arrow-right ml-3"></i>
+                </a>
+            </div>
+            <!-- Glacier italien -->
+            <div class="w-full lg:w-6 xl:w-3 p-5">
+                <img src="assets/images/blocks/feature/glacier-italien.svg" alt="Glacier Italien" class="w-full">
+                <div class="mt-3 mb-2 font-medium text-900 text-xl">Glacier Italien</div>
+                <span class="text-700 line-height-3">Offrez à vos enfants une sélection de glaces italiennes savoureuses, parfaites pour une pause sucrée.</span>
+                <a tabindex="0" class="text-blue-500 font-medium flex align-items-center mt-2">
+                    <span>Explorer</span><i class="pi pi-arrow-right ml-3"></i>
+                </a>
+            </div>
+            <!-- Livraison à domicile -->
+            <div class="w-full lg:w-6 xl:w-3 p-5">
+                <img src="assets/images/blocks/feature/livraison-domicile.svg" alt="Service de Livraison" class="w-full">
+                <div class="mt-3 mb-2 font-medium text-900 text-xl">Livraison à Domicile</div>
+                <span class="text-700 line-height-3">Profitez de notre service de livraison à domicile pour recevoir vos plats préférés directement chez vous.</span>
+                <a tabindex="0" class="text-blue-500 font-medium flex align-items-center mt-2">
+                    <span>Explorer</span><i class="pi pi-arrow-right ml-3"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="surface-section px-4 py-8 md:px-6 lg:px-8 overflow-hidden">
+        <div class="font-bold text-900 text-3xl mb-3 text-center">Comment Passer Votre Commande</div>
+        <div class="text-700 text-center mb-5 line-height-3">Suivez ces étapes simples pour commander vos plats préférés chez nous. Profitez de nos spécialités avec un service rapide et efficace.</div>
+        
+        <!-- Étape 1 : Appel pour passer la commande -->
+        <div class="flex lg:justify-content-center mb-5">
+            <div class="py-3 pr-8 pl-3 w-30rem hidden lg:block"><img src="assets/images/blocks/feature/feature-timeline-1.png" alt="Appel pour passer la commande" class="w-full mr-8"></div>
+            <div class="flex flex-column align-items-center w-2rem">
+                <span class="bg-blue-500 text-0 flex align-items-center justify-content-center border-circle" style="min-width: 2.5rem; min-height: 2.5rem;">1</span>
+                <div class="h-full bg-blue-500" style="width: 2px; min-height: 4rem;"></div>
+            </div>
+            <div class="py-3 pl-5 lg:pl-8 pl-3 lg:w-30rem">
+                <div class="text-900 text-xl mb-2 font-medium">Appel pour Passer la Commande</div>
+                <span class="block text-700 line-height-3 mb-3">Contactez-nous par téléphone pour passer votre commande. Nos conseillers sont disponibles pour vous aider à choisir vos plats préférés.</span>
+                <div class="pt-3 border-top-1 border-300">
+                    <div class="mb-2 line-height-3"><span class="text-900 font-medium">Sélectionnez vos plats</span> en utilisant notre menu varié.</div>
+                    <div class="line-height-3"><span class="text-900 font-medium">Communiquez vos informations</span> de livraison et de paiement.</div>
+                </div>
+                <img src="assets/images/blocks/feature/feature-timeline-1.png" alt="Appel pour passer la commande" class="w-full mt-3 block lg:hidden">
+            </div>
+        </div>
+    
+        <!-- Étape 2 : Paiement -->
+        <div class="flex justify-content-center mb-5">
+            <div class="py-3 pl-5 pr-3 lg:pr-8 lg:pl-3 lg:w-30rem flex-order-1 lg:flex-order-0">
+                <div class="text-900 text-xl mb-2 font-medium">Paiement</div>
+                <span class="block text-700 line-height-3 mb-3">Payez facilement via Orange Money ou MTN Mobile Money. Choisissez la méthode de paiement qui vous convient le mieux.</span>
+                <div class="pt-3 border-top-1 border-300">
+                    <div class="mb-2 line-height-3"><span class="text-900 font-medium">Choisissez votre méthode de paiement</span> préférée.</div>
+                    <div class="line-height-3"><span class="text-900 font-medium">Confirmez le paiement</span> pour que nous puissions préparer votre commande.</div>
+                </div>
+                <img src="assets/images/blocks/feature/feature-timeline-2.png" alt="Paiement" class="w-full mt-3 block lg:hidden">
+            </div>
+            <div class="flex flex-column align-items-center w-2rem flex-order-0 lg:flex-order-1">
+                <span class="bg-yellow-500 text-0 flex align-items-center justify-content-center border-circle" style="min-width: 2.5rem; min-height: 2.5rem;">2</span>
+                <div class="h-full bg-yellow-500" style="width: 2px; min-height: 4rem;"></div>
+            </div>
+            <div class="py-3 pl-8 pr-3 w-30rem hidden lg:block flex-order-2">
+                <img src="assets/images/blocks/feature/feature-timeline-2.png" alt="Paiement" class="w-full mr-8">
+            </div>
+        </div>
+    
+        <!-- Étape 3 : Livraison -->
+        <div class="flex justify-content-center">
+            <div class="py-3 pr-8 pl-3 w-30rem hidden lg:block"><img src="assets/images/blocks/feature/feature-timeline-3.png" alt="Livraison" class="w-full mr-8"></div>
+            <div class="flex flex-column align-items-center w-2rem">
+                <span class="bg-cyan-500 text-0 flex align-items-center justify-content-center border-circle" style="min-width: 2.5rem; min-height: 2.5rem;">3</span>
+                <div class="h-full bg-cyan-500" style="width: 2px; min-height: 4rem;"></div>
+            </div>
+            <div class="py-3 pl-5 lg:pl-8 pl-3 lg:w-30rem">
+                <div class="text-900 text-xl mb-2 font-medium">Recevez Votre Commande</div>
+                <span class="block text-700 line-height-3 mb-3">Patientez environ 30 minutes pour la livraison. Un de nos livreurs se rendra à votre adresse pour vous remettre votre commande.</span>
+                <div class="pt-3 border-top-1 border-300">
+                    <div class="mb-2 line-height-3"><span class="text-900 font-medium">Préparation de la commande</span> en cours.</div>
+                    <div class="line-height-3"><span class="text-900 font-medium">Suivi de la livraison</span> grâce à notre service de livraison rapide.</div>
+                </div>
+                <img src="assets/images/blocks/feature/feature-timeline-3.png" alt="Livraison" class="w-full mt-3 block lg:hidden">
+            </div>
+        </div>
+    </div>
+    
+    <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+        <div class="text-orange-500 text-center mb-3">VOTRE FAST-FOOD PRÉFÉRÉ</div>
+        <div class="font-bold text-5xl text-900 text-center mb-6">Découvrez Nos Services et Spécialités</div>
+        <div class="grid grid-nogutter">
+            <!-- Section McDonald's -->
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+                <div class="bg-blue-50 text-center p-5 border-round flex flex-column">
+                    <i class="text-blue-500 pi pi-apple text-4xl block mb-4"></i>
+                    <span class="text-900 text-5xl">McDonald's</span>
+                    <div class="text-blue-700 mt-3 font-medium">Délicieux et Rapide</div>
+                </div>
+            </div>
+            
+            <!-- Section Boissons pour Jeunes -->
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+                <div class="bg-purple-50 text-center p-5 border-round flex flex-column">
+                    <i class="text-purple-500 pi pi-cup text-4xl block mb-4"></i>
+                    <span class="text-900 text-5xl">Boissons Jeunes</span>
+                    <div class="text-purple-700 mt-3 font-medium">Pour Tous les Goûts</div>
+                </div>
+            </div>
+    
+            <!-- Section Glacier Italien -->
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+                <div class="bg-teal-50 text-center p-5 border-round flex flex-column">
+                    <i class="text-teal-500 pi pi-star text-4xl block mb-4"></i>
+                    <span class="text-900 text-5xl">Glacier Italien</span>
+                    <div class="text-teal-700 mt-3 font-medium">Un Délice pour les Enfants</div>
+                </div>
+            </div>
+    
+            <!-- Section Livraison à Domicile -->
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+                <div class="bg-indigo-50 text-center p-5 border-round flex flex-column">
+                    <i class="text-indigo-500 pi pi-truck text-4xl block mb-4"></i>
+                    <span class="text-900 text-5xl">Livraison</span>
+                    <div class="text-indigo-700 mt-3 font-medium">À Votre Porte</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="surface-ground px-4 py-8 md:px-6 lg:px-8">
+        <div class="flex flex-wrap relative overflow-hidden"
+            style="border-radius: 1rem; background: radial-gradient(100% 1126.49% at 100% 0%, rgba(106, 200, 212, 0.4) 0%, rgba(33, 33, 33, 0) 100%), #212121;">
+            <div class="px-6 py-8">
+                <span class="uppercase text-cyan-500 font-bold">DÉCOUVREZ NOS OFFRES</span>
+                <div class="text-white text-medium text-5xl mt-3 mb-5">Commandez dès maintenant!</div>
+                <button pripple=""
+                    class="p-ripple p-element p-3 bg-cyan-500 hover:bg-cyan-300 cursor-pointer transition-colors font-medium gray-900 border-none p-component transition-duration-150"
+                    style="border-radius: 35px;">Réservez Votre Commande<span class="p-ink"></span></button>
+            </div>
+            <img src="assets/images/blocks/cta/cta-browser.png" alt="Image"
+                class="static lg:absolute block mx-auto" style="height: 400px; top: -2rem; right: -1rem;">
+        </div>
+    </div>
+    
+    <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+        <div class="overflow-x-auto">
+            <table class="w-full white-space-nowrap" style="border-collapse: collapse; border-spacing: 0;">
+                <thead>
+                    <tr>
+                        <td class="surface-100 p-3">
+                            <div class="text-3xl text-900 mb-2">Tarifs</div>
+                            <span class="text-600 line-height-3">Choisissez parmi nos options de menu</span>
+                        </td>
+                        <td class="surface-100 p-3 text-center">
+                            <div class="text-900 text-xl font-medium mb-3">Petit</div>
+                            <div class="text-600 mb-3"><span class="text-3xl text-900">€5</span> /portion</div>
+                            <button pbutton="" pripple="" type="button" label="Commander"
+                                class="p-element p-ripple p-button-rounded p-button p-component">
+                                <span class="p-button-label">Commander</span>
+                                <span class="p-ink"></span>
+                            </button>
+                        </td>
+                        <td class="surface-100 p-3 text-center">
+                            <div class="text-900 text-xl font-medium mb-3">Moyen</div>
+                            <div class="text-600 mb-3"><span class="text-3xl text-900">€7</span> /portion</div>
+                            <button pbutton="" pripple="" type="button" label="Commander"
+                                class="p-element p-ripple p-button-rounded p-button p-component">
+                                <span class="p-button-label">Commander</span>
+                                <span class="p-ink"></span>
+                            </button>
+                        </td>
+                        <td class="surface-100 p-3 text-center">
+                            <div class="text-900 text-xl font-medium mb-3">Grand</div>
+                            <div class="text-600 mb-3"><span class="text-3xl text-900">€10</span> /portion</div>
+                            <button pbutton="" pripple="" type="button" label="Commander"
+                                class="p-element p-ripple p-button-rounded p-button p-component">
+                                <span class="p-button-label">Commander</span>
+                                <span class="p-ink"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="p-3 text-900 font-medium border-bottom-1 border-200">Menu McDonald's</td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 text-900 font-medium border-bottom-1 border-200">Boissons pour jeunes</td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 text-900 font-medium border-bottom-1 border-200">Glacier Italien pour enfants</td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 text-900 font-medium border-bottom-1 border-200">Service de livraison à domicile</td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                        <td class="text-center p-medium border-bottom-1 border-200"><i class="text-green-500 pi pi-check"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+        <div class="flex align-items-start lg:align-items-center lg:justify-content-between pb-5 border-bottom-1 border-300 flex-column lg:flex-row">
+            <div class="pr-0 lg:pr-8">
+                <img src="assets/images/blocks/logos/fastfood-logo.svg" alt="Image" height="50">
+                <p class="text-600 line-height-3 text-xl mb-0 mt-5">Bienvenue chez FastFood! Découvrez nos McDonald's, boissons pour jeunes, glacier italien pour enfants et notre service de livraison à domicile.</p>
+            </div>
+            <button pbutton="" pripple="" label="Commander Maintenant" class="p-element p-ripple mt-5 lg:mt-0 white-space-nowrap min-w-max p-button p-component">
+                <span class="p-button-label">Commander Maintenant</span>
+                <span class="p-ink"></span>
+            </button>
+        </div>
+    
+        <div class="py-5 border-bottom-1 border-300">
+            <div class="grid">
+                <div class="col-12 sm:col-6 md:col-4 lg:col-2">
+                    <span class="text-900 block font-bold line-height-3 mb-3">Menu</span>
+                    <ul class="list-none p-0 m-0">
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">McDonald's</a></li>
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Boissons pour Jeunes</a></li>
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Glacier Italien</a></li>
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Service de Livraison</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 sm:col-6 md:col-4 lg:col-2">
+                    <span class="text-900 block font-bold line-height-3 mb-3">À Propos</span>
+                    <ul class="list-none p-0 m-0">
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Notre Histoire</a></li>
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Équipe</a></li>
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 sm:col-6 md:col-4 lg:col-2">
+                    <span class="text-900 block font-bold line-height-3 mb-3">Ressources</span>
+                    <ul class="list-none p-0 m-0">
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Blog</a></li>
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">FAQ</a></li>
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 sm:col-6 md:col-4 lg:col-2">
+                    <span class="text-900 block font-bold line-height-3 mb-3">Connecter</span>
+                    <ul class="list-none p-0 m-0">
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Newsletter</a></li>
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Suivez-nous</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 sm:col-6 md:col-4 lg:col-2">
+                    <span class="text-900 block font-bold line-height-3 mb-3">Légal</span>
+                    <ul class="list-none p-0 m-0">
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Politique de Confidentialité</a></li>
+                        <li class="mb-2"><a class="text-700 cursor-pointer line-height-3">Conditions Générales</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="flex justify-content-between align-items-center py-5">
+            <span>© 2024 FastFood - Tous droits réservés</span>
+            <div class="flex align-items-center justify-content-between">
+                <a href="https://twitter.com" target="_blank" class="cursor-pointer text-500 md:ml-3 ml-2"><i class="pi pi-twitter text-xl"></i></a>
+                <a href="https://facebook.com" target="_blank" class="cursor-pointer text-500 md:ml-3 ml-2"><i class="pi pi-facebook text-xl"></i></a>
+                <a href="https://github.com" target="_blank" class="cursor-pointer text-500 md:ml-3 ml-2"><i class="pi pi-github text-xl"></i></a>
+            </div>
+        </div>
+    </div>
+    
+</div>
